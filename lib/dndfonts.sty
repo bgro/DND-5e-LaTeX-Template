@@ -7,7 +7,7 @@
 \RequirePackage{Royal}
 \RequirePackage[auto]{contour}
 
-\bool_if:NT \l__dnd_layout_bool
+\bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_layout_bool}}
   {
     \RequirePackage{bookman}
     \RequirePackage[type1]{gillius2}
@@ -15,6 +15,16 @@
     \RequirePackage[T1]{fontenc}
     \renewcommand{\sfdefault}{jkpss}
   }
+
+\bool_if:NT \l__wfrpg_layout_bool
+  {
+    \RequirePackage{imfellEnglish}
+    \RequirePackage[type1]{gillius2}
+    \RequirePackage[notext,nomath,nott]{kpfonts}
+    \RequirePackage[T1]{fontenc}
+    \renewcommand{\sfdefault}{jkpss}
+  }
+
 
 \cs_new_protected:Npn \__dnd_sf_initial_family:
   {

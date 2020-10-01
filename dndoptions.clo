@@ -46,8 +46,8 @@
 \keys_define:nn { dnd / options }
   {
     % Style 
-    layout .choice:,
-    layout / wfrpg .code:n =
+    style .choice:,
+    style / wfrpg .code:n =
       {
         \bool_set_true:N \l__wfrpg_layout_bool
       },
