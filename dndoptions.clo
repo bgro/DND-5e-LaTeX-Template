@@ -32,8 +32,8 @@
 \bool_new:N \l__dnd_layout_bool
 \bool_new:N \l__dnd_no_deprecated_code_bool
 
-\bool_new:N \l__wfrpg_style_bool
-\bool_set_false:N \l__wfrpg_style_bool
+\bool_new:N \l__wfrpg_layout_bool
+\bool_set_false:N \l__wfrpg_layout_bool
 
 \bool_set_true:N \l__dnd_multitoc_bool
 \bool_set_eq:NN \l__dnd_layout_bool \c__dnd_isclass_bool
@@ -46,14 +46,14 @@
 \keys_define:nn { dnd / options }
   {
     % Style 
-    style .choice:,
-    style / wfrpg .code:n =
+    layout .choice:,
+    layout / wfrpg .code:n =
       {
-        \bool_set_true:N \l__wfrpg_style_bool
+        \bool_set_true:N \l__wfrpg_layout_bool
       },
     style / none .code:n =
       {
-        \bool_set_true:N \l__wfrpg_style_bool
+        \bool_set_true:N \l__dnd_layout_bool
       }
 
     % Large-scale styling choice

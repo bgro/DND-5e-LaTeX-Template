@@ -27,58 +27,84 @@
 % Font initial settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Conditional load depending on wfrpg style
-\bool_if:NTF \l__wfrpg_style_bool
+% Conditional load depending on dnd layout
+  \bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_layout_bool}}
   {
-    \tl_const:Nn \c__dnd_part_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_part_style_tl_init {\color{titlered} \Huge \scshape}
-    \tl_const:Nn \c__dnd_chapter_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_chapter_style_tl_init {\linespread{.9} \color{titlered} \Huge \scshape}
-    \tl_const:Nn \c__dnd_section_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_section_style_tl_init {\linespread{.9} \color{titlered} \huge \scshape \RaggedRight}
-    \tl_const:Nn \c__dnd_subsection_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_subsection_style_tl_init {\linespread{.9} \color{titlered} \Large \scshape \RaggedRight}
-    \tl_const:Nn \c__dnd_subsubsection_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_subsubsection_style_tl_init {\linespread{.9} \color{titlered} \large \scshape \RaggedRight}
-    \tl_const:Nn \c__dnd_paragraph_family_tl_init {}
-    \tl_const:Nn \c__dnd_paragraph_style_tl_init {\bfseries \slshape}
-    \tl_const:Nn \c__dnd_subparagraph_family_tl_init {}
-    \tl_const:Nn \c__dnd_subparagraph_style_tl_init {\bfseries \slshape}
-    \tl_const:Nn \c__dnd_table_title_family_tl_init {\sffamily}
-    \tl_const:Nn \c__dnd_table_title_style_tl_init {\bfseries \scshape \large}
-    \tl_const:Nn \c__dnd_table_body_family_tl_init {\__dnd_sf_initial_family:}
-    \tl_const:Nn \c__dnd_table_body_style_tl_init {\small}
-    \tl_const:Nn \c__dnd_comment_title_family_tl_init {\sffamily}
-    \tl_const:Nn \c__dnd_comment_title_style_tl_init {\bfseries \scshape}
-    \tl_const:Nn \c__dnd_comment_body_family_tl_init {\__dnd_sf_initial_family:}
-    \tl_const:Nn \c__dnd_comment_body_style_tl_init {\small}
-    \tl_const:Nn \c__dnd_sidebar_title_family_tl_init {\sffamily}
-    \tl_const:Nn \c__dnd_sidebar_title_style_tl_init {\bfseries \scshape}
-    \tl_const:Nn \c__dnd_sidebar_body_family_tl_init {\__dnd_sf_initial_family:}
-    \tl_const:Nn \c__dnd_sidebar_body_style_tl_init {\small}
-    \tl_const:Nn \c__dnd_readaloud_family_tl_init {\__dnd_sf_initial_family:}
-    \tl_const:Nn \c__dnd_readaloud_style_tl_init {\small}
-    \tl_const:Nn \c__dnd_toc_part_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_toc_part_style_tl_init {\Large \scshape \color{titlered}}
-    \tl_const:Nn \c__dnd_toc_chapter_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_toc_chapter_style_tl_init {\large \scshape \color{titlered}}
-    \tl_const:Nn \c__dnd_toc_section_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_toc_section_style_tl_init {\normalsize}
-    \tl_const:Nn \c__dnd_stat_block_title_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_stat_block_title_style_tl_init {\bfseries \scshape \LARGE}
-    \tl_const:Nn \c__dnd_stat_block_body_family_tl_init {\__dnd_sf_initial_family:}
-    \tl_const:Nn \c__dnd_stat_block_body_style_tl_init {\small}
-    \tl_const:Nn \c__dnd_stat_block_section_family_tl_init {\sffamily}
-    \tl_const:Nn \c__dnd_stat_block_section_style_tl_init {\color{titlered} \scshape \large}
-    \tl_const:Nn \c__dnd_footer_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_footer_style_tl_init {\scriptsize \textcolor{pagegold}}
-    \tl_const:Nn \c__dnd_page_number_family_tl_init {\normalfont}
-    \tl_const:Nn \c__dnd_page_number_style_tl_init {\scriptsize \textcolor{pagegold}}
-    \tl_const:Nn \c__dnd_drop_cap_family_tl_init {\Royal}
-    \tl_const:Nn \c__dnd_drop_cap_style_tl_init {}
-    \tl_const:Nn \c__dnd_space_dim_init {0pt}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Sectioning commands
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_part_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_part_style_tl_init {\color{titlered} \Huge \scshape}
+  \tl_const:Nn \c__dnd_chapter_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_chapter_style_tl_init {\linespread{.9} \color{titlered} \Huge \scshape}
+  \tl_const:Nn \c__dnd_section_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_section_style_tl_init {\linespread{.9} \color{titlered} \huge \scshape \RaggedRight}
+  \tl_const:Nn \c__dnd_subsection_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_subsection_style_tl_init {\linespread{.9} \color{titlered} \Large \scshape \RaggedRight}
+  \tl_const:Nn \c__dnd_subsubsection_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_subsubsection_style_tl_init {\linespread{.9} \color{titlered} \large \scshape \RaggedRight}
+  \tl_const:Nn \c__dnd_paragraph_family_tl_init {}
+  \tl_const:Nn \c__dnd_paragraph_style_tl_init {\bfseries \slshape}
+  \tl_const:Nn \c__dnd_subparagraph_family_tl_init {}
+  \tl_const:Nn \c__dnd_subparagraph_style_tl_init {\bfseries \slshape}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Tables
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_table_title_family_tl_init {\sffamily}
+  \tl_const:Nn \c__dnd_table_title_style_tl_init {\bfseries \scshape \large}
+  \tl_const:Nn \c__dnd_table_body_family_tl_init {\__dnd_sf_initial_family:}
+  \tl_const:Nn \c__dnd_table_body_style_tl_init {\small}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Comment boxes
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_comment_title_family_tl_init {\sffamily}
+  \tl_const:Nn \c__dnd_comment_title_style_tl_init {\bfseries \scshape}
+  \tl_const:Nn \c__dnd_comment_body_family_tl_init {\__dnd_sf_initial_family:}
+  \tl_const:Nn \c__dnd_comment_body_style_tl_init {\small}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Sidebars
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_sidebar_title_family_tl_init {\sffamily}
+  \tl_const:Nn \c__dnd_sidebar_title_style_tl_init {\bfseries \scshape}
+  \tl_const:Nn \c__dnd_sidebar_body_family_tl_init {\__dnd_sf_initial_family:}
+  \tl_const:Nn \c__dnd_sidebar_body_style_tl_init {\small}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Read-aloud boxes
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_readaloud_family_tl_init {\__dnd_sf_initial_family:}
+  \tl_const:Nn \c__dnd_readaloud_style_tl_init {\small}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Table of Contents
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_toc_part_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_toc_part_style_tl_init {\Large \scshape \color{titlered}}
+  \tl_const:Nn \c__dnd_toc_chapter_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_toc_chapter_style_tl_init {\large \scshape \color{titlered}}
+  \tl_const:Nn \c__dnd_toc_section_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_toc_section_style_tl_init {\normalsize}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Stat blocks
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_stat_block_title_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_stat_block_title_style_tl_init {\bfseries \scshape \LARGE}
+  \tl_const:Nn \c__dnd_stat_block_body_family_tl_init {\__dnd_sf_initial_family:}
+  \tl_const:Nn \c__dnd_stat_block_body_style_tl_init {\small}
+  \tl_const:Nn \c__dnd_stat_block_section_family_tl_init {\sffamily}
+  \tl_const:Nn \c__dnd_stat_block_section_style_tl_init {\color{titlered} \scshape \large}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Miscellaneous
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \tl_const:Nn \c__dnd_footer_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_footer_style_tl_init {\scriptsize \textcolor{pagegold}}
+  \tl_const:Nn \c__dnd_page_number_family_tl_init {\normalfont}
+  \tl_const:Nn \c__dnd_page_number_style_tl_init {\scriptsize \textcolor{pagegold}}
+  \tl_const:Nn \c__dnd_drop_cap_family_tl_init {\Royal}
+  \tl_const:Nn \c__dnd_drop_cap_style_tl_init {}
+  \tl_const:Nn \c__dnd_space_dim_init {0pt}
+}
 
-  }
+% Conditional load depending on wfrpg layout
+  \bool_if:NT \l__wfrpg_layout_bool
   {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Sectioning commands
