@@ -31,10 +31,12 @@
     { \wordsep } % sep
     { \DndContour } % before-code
 
+
   \titlespacing* {\chapter}
     { 0pt }  % left
     { .3ex }  % before-sep
     { 2.8ex } % after-sep
+  
 
   % Section
   \titleformat {\section}
@@ -42,6 +44,8 @@
     { \thesection } % label
     { 1em } % sep
     { \nopagebreak } % before-code
+    [\vspace{-.3ex}\titleline{\includegraphics[width=\columnwidth]{img/wfrpg4_underline}}\vspace{.3ex}]
+
 
   \titlespacing* { \section }
     { 0pt } % left

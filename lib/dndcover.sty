@@ -1,0 +1,39 @@
+\ExplSyntaxOn
+
+
+\keys_define:nn { dnd / cover }
+  {
+ 
+    image .tl_set:N         = \l__dnd_cover_image,
+    image .initial:n        = img/cover,
+    image .value_required:n = true,
+
+    logo .tl_set:N         = \l__dnd_cover_logo,
+    logo .initial:n        = img/logo,
+    logo .value_required:n = true,
+  }
+    
+
+\NewDocumentCommand{\DndMakeCover}{ o }
+  {
+    \keys_set:nn { dnd / cover } { #1 }
+
+    \onecolumn
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember~picture,overlay]
+      \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{\l__dnd_cover_image}};
+    \end{tikzpicture}
+      
+    \begin{center}
+        \vspace*{-15mm}\includegraphics[width=3cm]{\l__dnd_cover_logo}\\*\vspace*{15mm}
+        \fontsize{48pt}{48pt}
+        \selectfont
+        {\MakeUppercase{Title}}\\*
+        \LARGE\vfill
+        \fontsize{18pt}{18pt}
+        {\textbf{Subtitle}}
+    \end{center}
+    \clearpage
+    \twocolumn%
+    
+  }                                         
