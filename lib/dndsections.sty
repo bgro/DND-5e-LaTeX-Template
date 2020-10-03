@@ -104,6 +104,16 @@
     {\wordsep}   % after-sep
 }
 
+
+\NewDocumentCommand{\WFRPGchapter}{ m }
+  {
+   \includegraphics[height=1em]{img/WFRPG_fan_logo}\DndContour{#1} \includegraphics[height=1em]{img/WFRPG_fan_logo}
+  }
+
+\NewDocumentCommand{\WFRPGpart}{ m }
+  {
+   \DndContour{#1} \newline\includegraphics[height=3em]{img/WFRPG_fan_logo}
+  }
 \bool_if:NT \l__wfrpg_layout_bool
 {
   % Change part numbering to Arabic numbers from Roman numerals
@@ -126,16 +136,16 @@
     [display]
     { \centering \DndFontPart } % format
     { \DndContour{\partname\ \thepart} } % label
-    { 2ex } % sep
-    { \DndContour } % before-code
+    { .3ex } % sep
+    { \WFRPGpart } % before-code
 
   % Chapter
   \titleclass {\chapter}{top}
   \titleformat {\chapter}[display]
     { \DndFontChapter } % format
     {\onecolumn \filcenter \DndContour{\chaptertitlename\ \thechapter } } % label
-    {\wordsep } % sep
-    {\filcenter\DndContour } % before-code
+    {.3ex } % sep
+    {\filcenter\WFRPGpart } % before-code
     [\twocolumn]
 
   \titlespacing* {\chapter}
