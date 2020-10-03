@@ -41,6 +41,7 @@
       \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{img/paper}};
     \end{tikzpicture}
     }
+
 }
 
 % Left-even page footer
@@ -52,6 +53,12 @@
       }
       \node[inner~sep=0pt,anchor=south,xshift=.28in,yshift=.39in] at (current~page.south~west) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
+    \begin{tikzpicture}[remember~picture,overlay]
+      \bool_if:NT \l__dnd_show_footer_scroll_bool {
+        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+      }
+    \end{tikzpicture}
+    
   }
 
 % Right-odd page footer
@@ -63,6 +70,12 @@
       }
       \node[inner~sep=0pt,anchor=south,xshift=-.28in,yshift=.39in] at (current~page.south~east) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
+        \begin{tikzpicture}[remember~picture,overlay]
+      \bool_if:NT \l__dnd_show_footer_scroll_bool {
+        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+      }
+    \end{tikzpicture}
+    
   }
 
 \fancypagestyle {plain} {}
