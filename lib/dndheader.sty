@@ -88,7 +88,7 @@
 \fancyfoot[LE]{%
     \DndFontFooter \leftmark
     \begin{tikzpicture}[remember~picture,overlay]
-      \node[xscale=-1,inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth, height= .7ex]{img/wfrp4_page_header_line}};
+      \node[xscale=-1,inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=.9\paperwidth, height= .7ex]{img/wfrp4_page_header_line_broken}};
   
       \node[inner~sep=0pt,anchor=south] at (current~page.south) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
@@ -104,9 +104,9 @@
 \fancyfoot[RO]{%
     \DndFontFooter \leftmark
     \begin{tikzpicture}[remember~picture,overlay]
-      \node[inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth,height=.7ex]{img/wfrp4_page_header_line}};
+      \node[inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=.9\paperwidth,height=.7ex]{img/wfrp4_page_header_line_broken}};
     
-      \node[inner~sep=0pt,anchor=south] at (current~page.south) {\DndFontPageNumber \thepage};
+      \node[inner~sep=0pt,anchor=south,yshift=.35in] at (current~page.south) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
         \begin{tikzpicture}[remember~picture,overlay]
       \bool_if:NT \l__dnd_show_footer_scroll_bool {
