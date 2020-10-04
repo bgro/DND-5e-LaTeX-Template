@@ -58,7 +58,7 @@
     \end{tikzpicture}
     \begin{tikzpicture}[remember~picture,overlay]
       \bool_if:NT \l__dnd_show_footer_scroll_bool {
-        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/wfrp_fan_gen_logo}};
       }
     \end{tikzpicture}
     
@@ -75,26 +75,26 @@
     \end{tikzpicture}
         \begin{tikzpicture}[remember~picture,overlay]
       \bool_if:NT \l__dnd_show_footer_scroll_bool {
-        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/wfrp_fan_gen_logo}};
       }
     \end{tikzpicture}
     
   }
 }
 
-\bool_if:NT \l__wfrpg_style_bool
+\bool_if:NT \l__wfrp_style_bool
  {
  % Left-even page footer
 \fancyfoot[LE]{%
     \DndFontFooter \leftmark
     \begin{tikzpicture}[remember~picture,overlay]
-      \node[xscale=-1,inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth, height= .7ex]{img/wfrpg4_page_header_line}};
+      \node[xscale=-1,inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth, height= .7ex]{img/wfrp4_page_header_line}};
   
       \node[inner~sep=0pt,anchor=south] at (current~page.south) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
     \begin{tikzpicture}[remember~picture,overlay]
       \bool_if:NT \l__dnd_show_footer_scroll_bool {
-        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/wfrp_fan_gen_logo}};
       }
     \end{tikzpicture}
     
@@ -104,13 +104,13 @@
 \fancyfoot[RO]{%
     \DndFontFooter \leftmark
     \begin{tikzpicture}[remember~picture,overlay]
-      \node[inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth,height=.7ex]{img/wfrpg4_page_header_line}};
+      \node[inner~sep=0pt,anchor=south,yshift=.39in] at (current~page.south) {\includegraphics[width=\paperwidth,height=.7ex]{img/wfrp4_page_header_line}};
     
       \node[inner~sep=0pt,anchor=south] at (current~page.south) {\DndFontPageNumber \thepage};
     \end{tikzpicture}
         \begin{tikzpicture}[remember~picture,overlay]
       \bool_if:NT \l__dnd_show_footer_scroll_bool {
-        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/wfrp_fan_gen_logo}};
       }
     \end{tikzpicture}
     

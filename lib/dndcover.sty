@@ -8,13 +8,17 @@
     image .initial:n        = img/cover,
     image .value_required:n = true,
 
-    frame .tl_set:N         = \l__wfrpg_cover_frame,
-    frame .initial:n        = img/WFRPG_fan_cover,
+    frame .tl_set:N         = \l__wfrp_cover_frame,
+    frame .initial:n        = img/wfrp_fan_gen_cover_frame,
     frame .value_required:n = true,
 
     logo .tl_set:N         = \l__dnd_cover_logo,
-    logo .initial:n        = img/wfrpg_fan_gen,
+    logo .initial:n        = img/wfrp_fan_gen_font_logo,
     logo .value_required:n = true,
+
+    title_color .tl_set:N         = \l__dnd_cover_title_color,
+    title_color .initial:n        = White,
+    title_color .value_required:n = true,
   }
     
 
@@ -28,9 +32,10 @@
       \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{\l__dnd_cover_image}};
     \end{tikzpicture}
     \begin{tikzpicture}[remember~picture,overlay]
-      \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{\l__wfrpg_cover_frame}};
+      \node[inner~sep=0pt] at (current~page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{\l__wfrp_cover_frame}};
     \end{tikzpicture}
- 
+
+
     \begin{center}
         \vspace*{20mm}\includegraphics[width=10cm]{\l__dnd_cover_logo}\\*\vspace*{15mm}
         \fontsize{24pt}{24pt}

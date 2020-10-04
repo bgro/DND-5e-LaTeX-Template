@@ -7,7 +7,7 @@
 \RequirePackage{Royal}
 \RequirePackage[auto]{contour}
 
-\bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_style_bool}}
+\bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrp_style_bool}}
   {
     \RequirePackage{bookman}
     \RequirePackage[type1]{gillius2}
@@ -16,7 +16,7 @@
     \renewcommand{\sfdefault}{jkpss}
   }
 
-\bool_if:NT \l__wfrpg_style_bool
+\bool_if:NT \l__wfrp_style_bool
   {
     \RequirePackage{imfellEnglish}
     \RequirePackage[type1]{gillius2}
@@ -117,8 +117,8 @@
   \tl_const:Nn \c__dnd_space_dim_init {0pt}
 }
 
-% Conditional load depending on wfrpg layout
-  \bool_if:NT \l__wfrpg_style_bool
+% Conditional load depending on wfrp layout
+  \bool_if:NT \l__wfrp_style_bool
   {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Sectioning commands

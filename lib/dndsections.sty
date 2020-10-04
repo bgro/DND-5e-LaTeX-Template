@@ -44,7 +44,7 @@
     { \thesection } % label
     { 1em } % sep
     { \nopagebreak } % before-code
-    [\vspace{-.3ex}\titleline{\includegraphics[width=\columnwidth]{img/wfrpg4_underline}}\vspace{.3ex}]
+    [\vspace{-.3ex}\titleline{\includegraphics[width=\columnwidth]{img/wfrp4_underline}}\vspace{.3ex}]
 
 
   \titlespacing* { \section }
@@ -105,16 +105,16 @@
 }
 
 
-\NewDocumentCommand{\WFRPGchapter}{ m }
+\NewDocumentCommand{\wfrpchapter}{ m }
   {
-   \includegraphics[height=1em]{img/WFRPG_fan_logo}\DndContour{#1} \includegraphics[height=1em]{img/WFRPG_fan_logo}
+   \includegraphics[height=1em]{img/wfrp_fan_gen_logo}\DndContour{#1} \includegraphics[height=1em]{img/wfrp_fan_gen_logo}
   }
 
-\NewDocumentCommand{\WFRPGpart}{ m }
+\NewDocumentCommand{\wfrppart}{ m }
   {
-   \DndContour{#1} \newline\includegraphics[height=3em]{img/WFRPG_fan_logo}
+   \DndContour{#1} \newline\includegraphics[height=3em]{img/wfrp_fan_gen_logo}
   }
-\bool_if:NT \l__wfrpg_style_bool
+\bool_if:NT \l__wfrp_style_bool
 {
   % Change part numbering to Arabic numbers from Roman numerals
   \renewcommand{\thepart}{\arabic{part}}
@@ -137,7 +137,7 @@
     { \centering \DndFontPart } % format
     { \DndContour{\partname\ \thepart} } % label
     { .3ex } % sep
-    { \WFRPGpart } % before-code
+    { \wfrppart } % before-code
 
 
   % Chapter
@@ -146,7 +146,7 @@
     { \DndFontChapter } % format
     {\onecolumn \filcenter \DndContour{\chaptertitlename\ \thechapter } } % label
     {.3ex } % sep
-    {\filcenter\WFRPGpart } % before-code
+    {\filcenter\wfrppart } % before-code
     [\twocolumn]
 
   \titlespacing* {\chapter}
@@ -161,7 +161,7 @@
     { \thesection } % label
     { 1em } % sep
     { \nopagebreak } % before-code
-    [\vspace{-.3ex}\titleline{\includegraphics[width=\columnwidth]{img/wfrpg4_underline}}\vspace{.3ex}]
+    [\vspace{-.3ex}\titleline{\includegraphics[width=\columnwidth]{img/wfrp4_underline}}\vspace{.3ex}]
 
 
   \titlespacing* { \section }

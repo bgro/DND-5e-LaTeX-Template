@@ -32,8 +32,8 @@
 \bool_new:N \l__dnd_layout_bool
 \bool_new:N \l__dnd_no_deprecated_code_bool
 
-\bool_new:N \l__wfrpg_style_bool
-\bool_set_false:N \l__wfrpg_style_bool
+\bool_new:N \l__wfrp_style_bool
+\bool_set_false:N \l__wfrp_style_bool
 
 \bool_new:N \l__dnd_style_bool
 \bool_set_true:N \l__dnd_style_bool
