@@ -16,9 +16,29 @@
     logo .initial:n        = img/wfrp_fan_gen_font_logo,
     logo .value_required:n = true,
 
+    title .tl_set:N         = \l__dnd_cover_title,
+    title .initial:n        = Title,
+    title .value_required:n = true,
+
     title_color .tl_set:N         = \l__dnd_cover_title_color,
-    title_color .initial:n        = White,
+    title_color .initial:n        = white,
     title_color .value_required:n = true,
+
+    title_font_size .tl_set:N         = \l__dnd_title_font_size,
+    title_font_size .initial:n        = 32,
+    title_font_size .value_required:n = true,
+
+    subtitle .tl_set:N         = \l__dnd_cover_subtitle,
+    subtitle .initial:n        = Subtitle,
+    subtitle .value_required:n = true,
+
+    subtitle_color .tl_set:N         = \l__dnd_cover_subtitle_color,
+    subtitle_color .initial:n        = white,
+    subtitle_color .value_required:n = true,
+    
+    subtitle_font_size .tl_set:N         = \l__dnd_subtitle_font_size,
+    subtitle_font_size .initial:n        = 24,
+    subtitle_font_size .value_required:n = true,
   }
     
 
@@ -37,13 +57,12 @@
 
 
     \begin{center}
-        \vspace*{20mm}\includegraphics[width=10cm]{\l__dnd_cover_logo}\\*\vspace*{15mm}
-        \fontsize{24pt}{24pt}
+        \vspace*{10mm}\includegraphics[width=12cm]{\l__dnd_cover_logo}\\*\vspace*{5mm}
         \selectfont
-        {\color{\l__dnd_cover_title_color}\MakeUppercase{Title}}\\*
-        \LARGE\vfill
-        \fontsize{18pt}{18pt}
-        {\textbf{Subtitle}}
+        {\color{\l__dnd_cover_title_color}\fontsize{\l__dnd_title_font_size}{\l__dnd_title_font_size}\selectfont \l__dnd_cover_title}\\*
+        \vfill
+        
+        {\color{\l__dnd_cover_subtitle_color}{\fontsize{\l__dnd_subtitle_font_size}{\l__dnd_subtitle_font_size}\selectfont  \l__dnd_cover_subtitle}}
     \end{center}
     \clearpage
     \twocolumn%
