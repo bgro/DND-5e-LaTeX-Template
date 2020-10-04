@@ -20,6 +20,8 @@
 \usepackage{listings}
 \usepackage{shortvrb}
 \usepackage{stfloats}
+\usepackage{amsmath}
+\usepackage{enumerate}
 
 \captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
 
@@ -55,12 +57,27 @@
 
 \part{Layout}
 
+
+
+
+
 \chapter[Sections]{Sections are very long\newline I say to long}
+
+\begin{itemize}[label=\skull]
+\item This is a typeset
+\item Another typeset
+\item Yet another test 
+\begin{itemize}[label=\skull]
+\item test
+\item foo
+\item braces
+\end{itemize}
+\end{itemize}
 
 \DndDropCapLine{T}{his package is designed to aid you in} writing beautifully typeset documents for the fifth edition of the world's greatest roleplaying game. It starts by adjusting the section formatting from the defaults in \LaTeX{} to something a bit more familiar to the reader. The chapter formatting is displayed above.
 
 \section{Section}
-Sections break up chapters into large groups of associated text.
+Sections break up chapters into large groups of associated text. \skull
 
 \subsection{Subsection}
 Subsections further break down the information for the reader.
