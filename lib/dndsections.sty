@@ -114,7 +114,7 @@
   {
    \DndContour{#1} \newline\includegraphics[height=3em]{img/WFRPG_fan_logo}
   }
-\bool_if:NT \l__wfrpg_layout_bool
+\bool_if:NT \l__wfrpg_style_bool
 {
   % Change part numbering to Arabic numbers from Roman numerals
   \renewcommand{\thepart}{\arabic{part}}
@@ -138,6 +138,7 @@
     { \DndContour{\partname\ \thepart} } % label
     { .3ex } % sep
     { \WFRPGpart } % before-code
+
 
   % Chapter
   \titleclass {\chapter}{top}

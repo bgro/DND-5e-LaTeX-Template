@@ -44,7 +44,10 @@
 
 }
 
-% Left-even page footer
+
+\bool_if:NT \l__dnd_style_bool
+ {
+ % Left-even page footer
 \fancyfoot[LE]{%
     \DndFontFooter \leftmark
     \begin{tikzpicture}[remember~picture,overlay]
@@ -77,6 +80,42 @@
     \end{tikzpicture}
     
   }
+}
+
+\bool_if:NT \l__wfrpg_style_bool
+ {
+ % Left-even page footer
+\fancyfoot[LE]{%
+    \DndFontFooter \leftmark
+    \begin{tikzpicture}[remember~picture,overlay]
+      \node[xscale=-1,inner~sep=0pt,anchor=south,nearly~opaque] at (current~page.south) {\includegraphics[width=\paperwidth,height=.6in]{img/wfrpg4_page_header_line}};
+  
+      \node[inner~sep=0pt,anchor=south] at (current~page.south~west) {\DndFontPageNumber \thepage};
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember~picture,overlay]
+      \bool_if:NT \l__dnd_show_footer_scroll_bool {
+        \node[inner~sep=0pt,anchor=east] at (current~page.north~east) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+      }
+    \end{tikzpicture}
+    
+  }
+
+% Right-odd page footer
+\fancyfoot[RO]{%
+    \DndFontFooter \leftmark
+    \begin{tikzpicture}[remember~picture,overlay]
+      \node[inner~sep=0pt,anchor=south,nearly~opaque] at (current~page.south) {\includegraphics[width=\paperwidth,height=.6in]{img/wfrpg4_page_header_line}};
+    
+      \node[inner~sep=0pt,anchor=south] at (current~page.south~east) {\DndFontPageNumber \thepage};
+    \end{tikzpicture}
+        \begin{tikzpicture}[remember~picture,overlay]
+      \bool_if:NT \l__dnd_show_footer_scroll_bool {
+        \node[inner~sep=0pt,anchor=west] at (current~page.north~west) {\includegraphics[height=5in,width=1in]{img/WFRPG_fan_logo}};
+      }
+    \end{tikzpicture}
+    
+  }  
+}
 
 \fancypagestyle {plain} {}
 

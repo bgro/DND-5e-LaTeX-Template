@@ -7,7 +7,7 @@
 \RequirePackage{Royal}
 \RequirePackage[auto]{contour}
 
-\bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_layout_bool}}
+\bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_style_bool}}
   {
     \RequirePackage{bookman}
     \RequirePackage[type1]{gillius2}
@@ -16,7 +16,7 @@
     \renewcommand{\sfdefault}{jkpss}
   }
 
-\bool_if:NT \l__wfrpg_layout_bool
+\bool_if:NT \l__wfrpg_style_bool
   {
     \RequirePackage{imfellEnglish}
     \RequirePackage[type1]{gillius2}
@@ -38,7 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Conditional load depending on dnd layout
-  \bool_if:NT {\bool_lazy_and_p:nn {\l__dnd_layout_bool} {!\l__wfrpg_layout_bool}}
+  \bool_if:NT \l__dnd_style_bool
   {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Sectioning commands
@@ -114,7 +114,7 @@
 }
 
 % Conditional load depending on wfrpg layout
-  \bool_if:NT \l__wfrpg_layout_bool
+  \bool_if:NT \l__wfrpg_style_bool
   {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Sectioning commands
@@ -507,3 +507,4 @@
     \seq_use:Nn \l_tmpb_seq { \newline }
     \group_end:
   }
+
