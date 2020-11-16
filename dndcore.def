@@ -19,7 +19,6 @@
 \RequirePackage {tikz} % drawing ornaments and lines
 \RequirePackage {xcolor}
 \RequirePackage {xparse} % \NewDocumentCommand and expl3
-
 \sys_if_engine_luatex:T
   {
     \RequirePackage {luacolor}

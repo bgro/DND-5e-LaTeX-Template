@@ -187,22 +187,26 @@ The |DndTable| colors the even rows and is set to the width of a line by default
         speed       = {30 ft., fly 30 ft.},
       ]
 
-    \DndMonsterAbilityScores[
-        str = 12,
-        dex = 8,
-        con = 13,
-        int = 10,
-        wis = 14,
-        cha = 15,
+    \WfrpStats[
+       m = 4,
+       ws = 45,
+       bs = 35,
+       s = 55,
+       t = 55,
+       i = 25,
+       ag = 15,
+       int = 15,
+       wp = 15,
+       w = 64 
       ]
 
     \DndMonsterDetails[
-        %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
-        %skills = {Acrobatics +0, Animal Handling +0, Arcana +0, Athletics +0, Deception +0, History +0, Insight +0, Intimidation +0, Investigation +0, Medicine +0, Nature +0, Perception +0, Performance +0, Persuasion +0, Religion +0, Sleight of Hand +0, Stealth +0, Survival +0},
-        %damage-vulnerabilities = {cold},
-        %damage-resistances = {bludgeoning, piercing, and slashing from nonmagical attacks},
-        %damage-immunities = {poison},
-        %condition-immunities = {poisoned},
+        saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
+        skills = {Acrobatics +0, Animal Handling +0, Arcana +0, Athletics +0, Deception +0, History +0, Insight +0, Intimidation +0, Investigation +0, Medicine +0, Nature +0, Perception +0, Performance +0, Persuasion +0, Religion +0, Sleight of Hand +0, Stealth +0, Survival +0},
+        damage-vulnerabilities = {cold},
+        damage-resistances = {bludgeoning, piercing, and slashing from nonmagical attacks},
+        damage-immunities = {poison},
+        condition-immunities = {poisoned},
         senses = {darkvision 60 ft., passive Perception 10},
         languages = {Common, Goblin, Undercommon},
         challenge = 1,
@@ -230,16 +234,16 @@ The |DndTable| colors the even rows and is set to the width of a line by default
     %Default values are shown commented out
     \DndMonsterAttack[
       name=Dagger,
-      %distance=both, % valid options are in the set {both,melee,ranged},
-      %type=weapon, %valid options are in the set {weapon,spell}
+      distance=both, % valid options are in the set {both,melee,ranged},
+      type=weapon, %valid options are in the set {weapon,spell}
       mod=+3,
-      %reach=5,
-      %range=20/60,
-      %targets=one target,
+      reach=5,
+      range=20/60,
+      targets=one target,
       dmg=\DndDice{1d4+1},
       dmg-type=piercing,
       %plus-dmg=,
-      %plus-dmg-type=,
+      plus-dmg-type=,
       %or-dmg=,
       %or-dmg-when=,
       %extra=,

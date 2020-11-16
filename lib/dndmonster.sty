@@ -373,6 +373,114 @@
     \group_end:
   }
 
+\keys_define:nn { wfrp / npc / stats }
+  {
+    m .tl_set:N         = \l__m_tl,
+    m .initial:n        = --,
+    m .value_required:n = true,
+    M .meta:n = { m = #1 },
+    ws .tl_set:N         = \l__ws_tl,
+    ws .initial:n        = --,
+    ws .value_required:n = true,
+    WS .meta:n = { ws = #1 },
+    bs .tl_set:N         = \l__bs_tl,
+    bs .initial:n        = --,
+    bs .value_required:n = true,
+    BS .meta:n = { bs = #1 },
+    s .tl_set:N         = \l__s_tl,
+    s .initial:n        = --,
+    s .value_required:n = true,
+    S .meta:n = { s = #1 },
+    t .tl_set:N         = \l__t_tl,
+    t .initial:n        = --,
+    t .value_required:n = true,
+    T .meta:n = { t = #1 },
+    i .tl_set:N         = \l__i_tl,
+    i .initial:n        = --,
+    i .value_required:n = true,
+    I .meta:n = { i = #1 },
+    ws .tl_set:N         = \l__ws_tl,
+    ws .initial:n        = --,
+    ws .value_required:n = true,
+    WS .meta:n = { ws = #1 },
+    ag .tl_set:N         = \l__ag_tl,
+    ag .initial:n        = --,
+    ag .value_required:n = true,
+    Ag .meta:n = { ag = #1 },
+    dex .tl_set:N         = \l__dex_tl,
+    dex .initial:n        = --,
+    dex .value_required:n = true,
+    Dex .meta:n = { dex = #1 },
+    int .tl_set:N         = \l__int_tl,
+    int .initial:n        = --,
+    int .value_required:n = true,
+    Int .meta:n = { int = #1 },
+    wp .tl_set:N         = \l__wp_tl,
+    wp .initial:n        = --,
+    wp .value_required:n = true,
+    WP .meta:n = { wp = #1 },
+    fel .tl_set:N         = \l__fel_tl,
+    fel .initial:n        = --,
+    fel .value_required:n = true,
+    Fel .meta:n = { fel = #1 },
+    w .tl_set:N         = \l__w_tl,
+    w .initial:n        = --,
+    w .value_required:n = true,
+    W .meta:n = { w = #1 },
+
+  }
+
+% Centered Column
+\newcolumntype { Z }
+  { > { \centering \arraybackslash } X }
+
+% Ability scores in a table
+\cs_new_protected_nopar:Npn \__wfrp_stats:
+  { \footnotesize
+    \color {titlered}
+    \par \vspace{1pt} \noindent
+    %\begin{tabularx} {\linewidth} {@{}Z|Z|Z|Z|Z|Z|Z|Z|Z|Z|Z|Z@{}}
+    \begin{tabularx} {\linewidth} {@{}c|c|c|c|c|c|c|c|c|c|c|c@{}}
+
+      \rule {0pt} {3.7mm} % adds space between hline and table
+      \textbf {\Mstatname} &
+      \textbf {\WSstatname} &
+      \textbf {\BSstatname} &
+      \textbf {\Sstatname} &
+      \textbf {\Tstatname} &
+      \textbf {\Istatname} &
+      \textbf {\AGstatname} &
+      \textbf {\DEXstatname} &
+      \textbf {\INTstatname} &
+      \textbf {\WPstatname} &
+      \textbf {\FELstatname} &
+      \textbf {\Wstatname} \\\hline
+      \l__m_tl &
+      \l__ws_tl &
+      \l__bs_tl &
+      \l__s_tl &
+      \l__t_tl &
+      \l__i_tl &
+      \l__ag_tl &
+      \l__dex_tl &  
+      \l__int_tl &
+      \l__wp_tl &
+      \l__fel_tl &
+      \l__w_tl 
+    \end{tabularx}
+
+    \par \vspace{4pt}%
+  }
+
+\NewDocumentCommand {\WfrpStats} {o}
+  {
+    \group_begin:
+      \keys_set:nn { wfrp / npc / stats } {#1}
+      \__wfrp_stats:
+    \group_end:
+  }
+
+
 % Inline header for monster actions - similar to a paragraph
 \NewDocumentCommand {\DndMonsterAction} {m}
   { \par \smallskip \noindent \textsl { \textbf {#1.} } }
